@@ -6,24 +6,26 @@ const { img, img2, alt, title, price } = Astro.props;
 ---
 
 <div class="card w-[21rem] bg-base-100 shadow-xl lg:w-96">
-  <figure>
-    <Image src={img} {alt} />
-  </figure>
-  <div class="hidden lg:block">
+  <a href="https://adsomos.com.br">
     <figure>
-      <Image src={img2} {alt} />
+      <Image src={img} {alt} />
     </figure>
-  </div>
-  <div class="card-body">
-    <h2 class="card-title">{title}</h2>
-    <p>Price: ${price}</p>
     <div class="hidden lg:block">
-      <Reviews />
+      <figure>
+        <Image src={img2} {alt} />
+      </figure>
     </div>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">
-        <a href="https://adsomos.com.br"> Buy Now </a>
-      </button>
+    <div class="card-body">
+      <h2 class="card-title">{title}</h2>
+      <p>Price: ${price}</p>
+      <div class="hidden lg:block">
+        <Reviews />
+      </div>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">
+          <a href="https://adsomos.com.br"> Buy Now </a>
+        </button>
+      </div>
     </div>
-  </div>
+  </a>
 </div>
