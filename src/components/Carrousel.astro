@@ -1,9 +1,10 @@
 ---
-import Card from "./Card.astro";
-import Prod1 from "../assets/imgs/products/prod1.webp";
-import Prod2 from "../assets/imgs/products/prod2.jpg";
-import Prod3 from "../assets/imgs/products/prod3.jpg";
-import Prod4 from "../assets/imgs/products/prod4.webp";
+import Prod1 from "../assets/imgs/carrousel/iphone_14_pro_max.jpg";
+import Prod2 from "../assets/imgs/carrousel/moto_g_100.jpeg";
+import Prod3 from "../assets/imgs/carrousel/xiaomi_redmi_note_13.jpg";
+import Prod4 from "../assets/imgs/carrousel/lg_velvet.png";
+import Prod5 from "../assets/imgs/carrousel/xiaomi_mi_note_12.webp";
+import Prod6 from "../assets/imgs/carrousel/realme_c51.webp";
 import { Image } from "astro:assets";
 import Reviews from "./Reviews.astro";
 ---
@@ -13,19 +14,19 @@ import Reviews from "./Reviews.astro";
     <li class="h-[50vh] relative flex flex-row gap-4">
       <div class="card h-full w-full object-cover bg-base-100 shadow-xl flex">
         <figure>
-          <Image src={Prod1} alt="1" width={400} />
+          <Image src={Prod1} alt="A Image of Smartphone" width={400} />
         </figure>
         <div class="card-body flex flex-col items-center">
-          <h2 class="card-title">Samsung S21</h2>
+          <h2 class="card-title">Iphone 14 Pro Max</h2>
           <Reviews />
         </div>
       </div>
       <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
         <figure>
-          <Image src={Prod2} alt="1" width={400} />
+          <Image src={Prod2} alt="A Image of Smartphone" width={400} />
         </figure>
         <div class="card-body flex flex-col items-center">
-          <h2 class="card-title">Realme 11x</h2>
+          <h2 class="card-title">Moto G 100</h2>
           <Reviews />
         </div>
       </div>
@@ -33,19 +34,39 @@ import Reviews from "./Reviews.astro";
     <li class="h-[50vh] relative hidden flex flex-row gap-4">
       <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
         <figure>
-          <Image src={Prod3} alt="1" width={400} />
+          <Image src={Prod3} alt="A Image of Smartphone" width={400} />
         </figure>
         <div class="card-body flex flex-col items-center">
-          <h2 class="card-title">Moto G52</h2>
+          <h2 class="card-title">Xiamo Redmi Note 13</h2>
           <Reviews />
         </div>
       </div>
       <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
         <figure>
-          <Image src={Prod4} alt="1" width={400} />
+          <Image src={Prod4} alt="A Image of Smartphone" width={400} />
         </figure>
         <div class="card-body flex flex-col items-center">
-          <h2 class="card-title">Nokia C30</h2>
+          <h2 class="card-title">LG Velvet</h2>
+          <Reviews />
+        </div>
+      </div>
+    </li>
+    <li class="h-[50vh] relative hidden flex flex-row gap-4">
+      <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
+        <figure>
+          <Image src={Prod5} alt="A Image of Smartphone" width={400} />
+        </figure>
+        <div class="card-body flex flex-col items-center">
+          <h2 class="card-title">Xiaomi Mi Note 12</h2>
+          <Reviews />
+        </div>
+      </div>
+      <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
+        <figure>
+          <Image src={Prod6} alt="A Image of Smartphone" width={400} />
+        </figure>
+        <div class="card-body flex flex-col items-center">
+          <h2 class="card-title">Realme C51</h2>
           <Reviews />
         </div>
       </div>
