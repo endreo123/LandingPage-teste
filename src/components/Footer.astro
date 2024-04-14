@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/imgs/logo.jpg";
+---
+
+<footer
+  class="flex flex-col items-center justify-center gap-20 bg-black lg:flex-row pt-5 mt-4 text-white"
+>
+  <div class="flex flex-col items-center">
+    <Image class="rounded-md" src={Logo} alt="Logo of Store" width={100} />
+    <small class="pt-2">
+      1717 Harrison St, San Francisco,
+      <p>CA 94103, USA</p>
+    </small>
+  </div>
+  <div>
+    <header class="flex flex-col gap-14 lg:flex-row">
+      <div>
+        <h2 class="text-2xl">MAIN MENU</h2>
+        <ul class="flex flex-col items-center">
+          <li>
+            <a href="https://adsomos.com.br">Home</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">About</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Shop</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Help</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl">COMPANY</h2>
+        <ul class="flex flex-col items-center">
+          <li>
+            <a href="https://adsomos.com.br">The Company</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Careers</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Press</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl">DISCOVER</h2>
+        <ul class="flex flex-col items-center">
+          <li>
+            <a href="https://adsomos.com.br">The Team</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Our History</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Brand Motto</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-2xl">FIND US ON</h2>
+        <ul class="flex flex-col items-center">
+          <li>
+            <a href="https://adsomos.com.br">Home</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">About</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Shop</a>
+          </li>
+          <li>
+            <a href="https://adsomos.com.br">Help</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+  </div>
+</footer>

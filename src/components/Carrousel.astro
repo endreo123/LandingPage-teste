@@ -1,0 +1,135 @@
+---
+import Card from "./Card.astro";
+import Prod1 from "../assets/imgs/products/prod1.webp";
+import Prod2 from "../assets/imgs/products/prod2.jpg";
+import Prod3 from "../assets/imgs/products/prod3.jpg";
+import Prod4 from "../assets/imgs/products/prod4.webp";
+import { Image } from "astro:assets";
+import Reviews from "./Reviews.astro";
+---
+
+<div class="relative">
+  <ul id="slider">
+    <li class="h-[50vh] relative flex flex-row gap-4">
+      <div class="card h-full w-full object-cover bg-base-100 shadow-xl flex">
+        <figure>
+          <Image src={Prod1} alt="1" width={400} />
+        </figure>
+        <div class="card-body flex flex-col items-center">
+          <h2 class="card-title">Samsung S21</h2>
+          <Reviews />
+        </div>
+      </div>
+      <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
+        <figure>
+          <Image src={Prod2} alt="1" width={400} />
+        </figure>
+        <div class="card-body flex flex-col items-center">
+          <h2 class="card-title">Realme 11x</h2>
+          <Reviews />
+        </div>
+      </div>
+    </li>
+    <li class="h-[50vh] relative hidden flex flex-row gap-4">
+      <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
+        <figure>
+          <Image src={Prod3} alt="1" width={400} />
+        </figure>
+        <div class="card-body flex flex-col items-center">
+          <h2 class="card-title">Moto G52</h2>
+          <Reviews />
+        </div>
+      </div>
+      <div class="card h-full w-full object-cover bg-base-100 shadow-xl">
+        <figure>
+          <Image src={Prod4} alt="1" width={400} />
+        </figure>
+        <div class="card-body flex flex-col items-center">
+          <h2 class="card-title">Nokia C30</h2>
+          <Reviews />
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="absolute z-50 px-5 flex h-full w-full top-0 left-0">
+    <div class="my-auto w-full flex justify-between">
+      <button
+        id="prev-btn"
+        class="bg-white p-3 rounded-full bg-opacity-90 shadow-2xl"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+        </svg>
+      </button>
+      <button
+        id="next-btn"
+        class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlideID = 1;
+
+  const sliderElement = document.getElementById("slider") as HTMLElement;
+  const totalSlides = sliderElement?.childElementCount;
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+
+  prevBtn?.addEventListener("click", () => prev());
+  nextBtn?.addEventListener("click", () => next());
+
+  function next() {
+    if (currentSlideID < totalSlides) {
+      currentSlideID++;
+      showSlide();
+    }
+  }
+
+  function prev() {
+    if (currentSlideID > 1) {
+      currentSlideID--;
+      showSlide();
+    }
+  }
+
+  function showSlide() {
+    const slides = document
+      .getElementById("slider")
+      ?.getElementsByTagName("li") as HTMLCollectionOf<HTMLLIElement>;
+    for (let i = 0; i < totalSlides; i++) {
+      const element = slides[i];
+
+      if (currentSlideID === i + 1) {
+        element.classList.remove("hidden");
+      } else {
+        element.classList.add("hidden");
+      }
+    }
+  }
+</script>

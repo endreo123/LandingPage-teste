@@ -1,0 +1,82 @@
+---
+import Prod1_2 from "../assets/imgs/products/prod1-2.webp";
+import Prod1 from "../assets/imgs/products/prod1.webp";
+import Prod2 from "../assets/imgs/products/prod2.jpg";
+import Prod3 from "../assets/imgs/products/prod3.jpg";
+import Prod4 from "../assets/imgs/products/prod4.webp";
+import Prod5 from "../assets/imgs/products/prod5.webp";
+import Card from "../components/Card.astro";
+import CardBig from "../components/CardBig.astro";
+import Carrousel from "../components/Carrousel.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Separator from "../components/Separator.astro";
+import BasicLayout from "../Layouts/BasicLayout.astro";
+---
+
+<BasicLayout>
+  <Separator />
+  <main>
+    <section
+      class="flex flex-col mt-8 items-center space-y-4 lg:justify-center lg:mx-16"
+    >
+      <Carrousel />
+      <Newsletter />
+    </section>
+    <Separator />
+    <section>
+      <div>
+        <div
+          class="flex flex-col items-center lg:justify-center gap-4 lg:flex-row"
+        >
+          <CardBig
+            img={Prod1}
+            alt="Image of a Product"
+            title="Samsung S21"
+            price="699.99"
+            cardSize="96"
+            img2={Prod1_2}
+          />
+          <div class="grid grid-cols-2 gap-4 justify-between">
+            <Card
+              img={Prod2}
+              alt="Image of a Product"
+              title="Realme 11x"
+              price="289.00"
+              cardSize=""
+            />
+            <Card
+              img={Prod3}
+              alt="Image of a Product"
+              title="Moto G52"
+              price="479.00"
+            />
+            <Card
+              img={Prod4}
+              alt="Image of a Product"
+              title="Nokia C30"
+              price="124.99"
+              cardSize=""
+            />
+            <Card
+              img={Prod5}
+              alt="Image of a Product"
+              title="Realme C55"
+              price="431.00"
+              cardSize=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <Separator />
+    <section class="flex flex-col items-center gap-2">
+      <h2 class="text-3xl">About your Shop</h2>
+      <p class="text-md text-justify py-6 mx-4 lg:mx-52">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ad sunt
+        laudantium voluptatem earum natus, sint maxime voluptatum maiores beatae
+        architecto suscipit quasi officiis. Distinctio voluptatum animi nemo
+        voluptas eos!
+      </p>
+    </section>
+  </main>
+</BasicLayout>

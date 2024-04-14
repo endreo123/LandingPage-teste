@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Reviews from "./Reviews.astro";
+
+const { img, alt, title, price } = Astro.props;
+---
+
+<div class={`card w-40 bg-base-100 shadow-xl lg:w-[17.2rem]`}>
+  <figure>
+    <Image src={img} {alt} />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>Price: ${price}</p>
+    <div class="hidden lg:block">
+      <Reviews />
+    </div>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">
+        <a href="https://adsomos.com.br"> Buy Now </a>
+      </button>
+    </div>
+  </div>
+</div>
