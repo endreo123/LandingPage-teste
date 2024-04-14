@@ -6,7 +6,10 @@ export default {
 	},
 	plugins: [require("daisyui")],
 	daisyui: {
-		themes: false,
-		logs: false
+		themes: [
+			'light'
+		],
+		logs: false,
+		base: false
 	}
 }
