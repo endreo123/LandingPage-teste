@@ -1,15 +1,15 @@
 ---
-import Prod1 from "../assets/imgs/carrousel/iphone_14_pro_max.jpg";
-import Prod2 from "../assets/imgs/carrousel/moto_g_100.jpeg";
-import Prod3 from "../assets/imgs/carrousel/xiaomi_redmi_note_13.jpg";
-import Prod4 from "../assets/imgs/carrousel/lg_velvet.png";
-import Prod5 from "../assets/imgs/carrousel/xiaomi_mi_note_12.webp";
-import Prod6 from "../assets/imgs/carrousel/realme_c51.webp";
 import { Image } from "astro:assets";
+import Prod1 from "../assets/imgs/carrousel/iphone_14_pro_max.jpg";
+import Prod4 from "../assets/imgs/carrousel/lg_velvet.png";
+import Prod2 from "../assets/imgs/carrousel/moto_g_100.jpeg";
+import Prod6 from "../assets/imgs/carrousel/realme_c51.webp";
+import Prod5 from "../assets/imgs/carrousel/xiaomi_mi_note_12.webp";
+import Prod3 from "../assets/imgs/carrousel/xiaomi_redmi_note_13.jpg";
 import Reviews from "./Reviews.astro";
 ---
 
-<div class="relative">
+<div class="relative -z-10">
   <ul id="slider">
     <li class="h-[50vh] relative flex flex-row gap-4">
       <a href="https://adsomos.com.br">
@@ -129,10 +129,10 @@ import Reviews from "./Reviews.astro";
 <script>
   let currentSlideID = 1;
 
-  const sliderElement = document.getElementById("slider") as HTMLElement;
-  const totalSlides = sliderElement?.childElementCount;
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
+  const sliderElement = document.getElementById("slider") as HTMLElement,
+    totalSlides = sliderElement?.childElementCount,
+    prevBtn = document.getElementById("prev-btn"),
+    nextBtn = document.getElementById("next-btn");
 
   prevBtn?.addEventListener("click", () => prev());
   nextBtn?.addEventListener("click", () => next());

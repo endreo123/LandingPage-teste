@@ -1,74 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import Cart from "../assets/imgs/navbar/cart.png";
 import Img1Header1 from "../assets/imgs/header/img1.webp";
 import Img1Header2 from "../assets/imgs/header/img2.jpg";
 import Img1Header3 from "../assets/imgs/header/img3.jpg";
-import SearhInput from "./SearhInput.astro";
-import HamburguerMenu from "./HamburguerMenu.astro";
-import Sidebar from "./Sidebar.astro";
+import Nav from "./Nav";
 ---
 
 <header>
-  <nav class="navbar bg-green-600">
-    <div class="navbar-start p-2 lg:p-0">
-      <!-- Mobile -->
-      <HamburguerMenu />
-
-      <!-- Search -->
-      <form id="search-form" class="ml-4">
-        <SearhInput />
-      </form>
-    </div>
-
-    <div class="navbar-center">
-      <!-- Desktop menu -->
-      <ul class="hidden lg:flex space-x-6 text-xl">
-        <li>
-          <button class="hover:underline hover:underline-offset-1">
-            <a href="https://adsomos.com/">Home</a>
-          </button>
-        </li>
-        <span class="block mt-2 bg-black h-4 w-0.5"></span>
-        <li>
-          <button class="hover:underline hover:underline-offset-1">
-            <a href="https://adsomos.com/">About</a>
-          </button>
-        </li>
-        <span class="block mt-2 bg-black h-4 w-0.5"></span>
-        <li>
-          <button class="hover:underline hover:underline-offset-1">
-            <a href="https://adsomos.com/">Shop</a>
-          </button>
-        </li>
-        <span class="block mt-2 bg-black h-4 w-0.5"></span>
-        <li>
-          <button class="hover:underline hover:underline-offset-1">
-            <a href="https://adsomos.com/">Help</a>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <div class="navbar-end">
-      <!-- Desktop -->
-      <button
-        id="botao_carinho_de_compras"
-        class="btn btn-neutral hover:bg-slate-600"
-      >
-        <a
-          href="https://adsomos.com/"
-          class="text-white flex text-opacity-70 my-1 mx-1.5 space-x-1.5"
-        >
-          <Image src={Cart} width="30" alt="Imagem de um carinho de compra" />
-          <span class="hidden lg:block mt-2"> Your Cart </span>
-        </a>
-      </button>
-    </div>
-  </nav>
-
-  <!-- mobile sidebar -->
-  <Sidebar />
+  <Nav client:load />
 
   <section class="flex items-center mt-24 flex-col">
     <h2 class="text-2xl lg:text-6xl">All you need in one single place</h2>
@@ -100,43 +39,3 @@ import Sidebar from "./Sidebar.astro";
     <button class="btn btn-neutral mt-4 hover:bg-slate-600"> Shop Now </button>
   </section>
 </header>
-
-<script>
-  //Search Mobile
-
-  const searchForm = document.getElementById("search-form");
-  const searchBtn = document.getElementById("search-btn");
-  const exitSearchBtn = document.getElementById("exit-search-btn");
-
-  searchBtn?.addEventListener("click", () => {
-    toggleSearch();
-  });
-
-  exitSearchBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    toggleSearch();
-  });
-
-  function toggleSearch() {
-    searchForm?.classList.toggle("hidden");
-    searchBtn?.classList.toggle("hidden");
-  }
-
-  //Sidebar Mobile
-
-  const hamburguer = document.getElementById("hamburguer");
-  const exitSideBarBtn = document.getElementById("exit-sidebar-menu-btn");
-
-  hamburguer?.addEventListener("click", () => {
-    toggleMenu();
-  });
-
-  exitSideBarBtn?.addEventListener("click", () => {
-    toggleMenu();
-  });
-
-  function toggleMenu() {
-    const menuMobile = document.getElementById("menu-mobile");
-    menuMobile?.classList.toggle("hidden");
-  }
-</script>

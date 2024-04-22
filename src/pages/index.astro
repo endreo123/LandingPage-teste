@@ -24,49 +24,45 @@ import BasicLayout from "../Layouts/BasicLayout.astro";
       <Newsletter />
     </section>
     <Separator />
-    <section>
-      <div>
-        <div
-          class="flex flex-col items-center lg:justify-center gap-4 lg:flex-row"
-        >
-          <CardBig
-            img={Prod1}
-            alt="Image of a Product"
-            title="Samsung S21"
-            price="699.99"
-            cardSize="96"
-            img2={Prod1_2}
-          />
-          <div class="grid grid-cols-2 gap-4 justify-between">
-            <Card
-              img={Prod2}
-              alt="Image of a Product"
-              title="Realme 11x"
-              price="289.00"
-              cardSize=""
-            />
-            <Card
-              img={Prod3}
-              alt="Image of a Product"
-              title="Moto G52"
-              price="479.00"
-            />
-            <Card
-              img={Prod4}
-              alt="Image of a Product"
-              title="Nokia C30"
-              price="124.99"
-              cardSize=""
-            />
-            <Card
-              img={Prod5}
-              alt="Image of a Product"
-              title="Realme C55"
-              price="431.00"
-              cardSize=""
-            />
-          </div>
-        </div>
+    <section
+      class="flex flex-col items-center lg:justify-center gap-4 lg:flex-row"
+    >
+      <CardBig
+        img={Prod1}
+        alt="Image of a Product"
+        title="Samsung S21"
+        price="699.99"
+        cardSize="96"
+        img2={Prod1_2}
+      />
+      <div class="grid grid-cols-2 gap-4 justify-between">
+        <Card
+          img={Prod2}
+          alt="Image of a Product"
+          title="Realme 11x"
+          price="289.00"
+          cardSize=""
+        />
+        <Card
+          img={Prod3}
+          alt="Image of a Product"
+          title="Moto G52"
+          price="479.00"
+        />
+        <Card
+          img={Prod4}
+          alt="Image of a Product"
+          title="Nokia C30"
+          price="124.99"
+          cardSize=""
+        />
+        <Card
+          img={Prod5}
+          alt="Image of a Product"
+          title="Realme C55"
+          price="431.00"
+          cardSize=""
+        />
       </div>
     </section>
     <Separator />
